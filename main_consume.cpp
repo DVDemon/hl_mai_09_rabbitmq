@@ -16,8 +16,9 @@ int main(void)
                        [[maybe_unused]] uint64_t deliveryTag,
                        [[maybe_unused]] bool redelivered)
             {
-
-                std::cout <<" [x] Received "<<message.body() << std::endl;
+                std::string msg;
+                for(size_t i=0;i<message.bodySize();++i) msg+=message.body()[i];
+                std::cout <<" [x] Received ["<<msg << "]," << message.bodySize() << std::endl;
             });
 
     std::cout << " [*] Waiting for messages. To exit press CTRL-C\n";

@@ -84,6 +84,7 @@ struct SimplePocoHandlerImpl
     Buffer outBuffer;
     std::vector<char> tmpBuff;
 };
+
 SimplePocoHandler::SimplePocoHandler(const std::string& host, uint16_t port) :
         m_impl(new SimplePocoHandlerImpl)
 {
@@ -194,6 +195,7 @@ bool SimplePocoHandler::connected() const
 
 void SimplePocoHandler::sendDataFromBuffer()
 {
+    
     if (m_impl->outBuffer.available())
     {
         m_impl->socket.sendBytes(m_impl->outBuffer.data(), m_impl->outBuffer.available());

@@ -5,6 +5,8 @@ project(amqp_publisher C CXX)
 SET (EXAMPLE_PUBLISH "amqp_publisher")
 SET (EXAMPLE_CONSUME "amqp_consumer")
 
+# https://github.com/CopernicaMarketingSoftware/AMQP-CPP
+
 find_package(Threads)
 find_package(OpenSSL)
 find_package(Poco REQUIRED COMPONENTS Foundation Util Net XML JSON Crypto NetSSL)
