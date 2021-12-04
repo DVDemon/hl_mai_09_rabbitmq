@@ -27,6 +27,6 @@ int main(void)
     });
 
 
-    handler.loop();
+    while(true) handler.loop();
     return 0;
 }

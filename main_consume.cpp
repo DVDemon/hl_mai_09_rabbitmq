@@ -22,6 +22,6 @@ int main(void)
             });
 
     std::cout << " [*] Waiting for messages. To exit press CTRL-C\n";
-    handler.loop();
+    while(true) handler.loop();
     return 0;
 }
