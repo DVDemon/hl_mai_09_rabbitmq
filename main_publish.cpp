@@ -12,7 +12,7 @@ int main(void)
     AMQP::Channel channel(&connection);
 
     channel.onReady([&]()
-    {
+                    {
         std::cout << "ready" << std::endl;
         //if(handler.connected())
         for(size_t i=0;i<1000;++i)
@@ -23,10 +23,9 @@ int main(void)
             std::cout << " [x] Sent " << msg << std::endl;
            
         }
-        handler.quit();
-    });
+        handler.quit(); });
 
-
-    while(true) handler.loop();
+    while (true)
+        handler.loop();
     return 0;
 }
