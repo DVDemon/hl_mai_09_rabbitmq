@@ -14,7 +14,8 @@ int main(void)
                                                      {
                 std::string msg;
                 for(size_t i=0;i<message.bodySize();++i) msg+=message.body()[i];
-                std::cout <<" [x] Received ["<<msg << "]," << message.bodySize() << std::endl; });
+                std::cout <<" [x] Received ["<<msg << "]," << message.bodySize() << std::endl; 
+                });
 
     std::cout << " [*] Waiting for messages. To exit press CTRL-C\n";
     while (true)

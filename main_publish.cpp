@@ -14,7 +14,6 @@ int main(void)
     channel.onReady([&]()
                     {
         std::cout << "ready" << std::endl;
-        //if(handler.connected())
         for(size_t i=0;i<1000;++i)
         {
             std::string msg = "Hello world:";
