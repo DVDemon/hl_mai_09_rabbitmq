@@ -13,16 +13,17 @@ int main(void)
 
     channel.onReady([&]()
                     {
-        std::cout << "ready" << std::endl;
-        for(size_t i=0;i<1000;++i)
-        {
-            std::string msg = "Hello world:";
-            msg+=std::to_string(i);
-            channel.publish("", "hello", msg.c_str());
-            std::cout << " [x] Sent " << msg << std::endl;
-           
-        }
-        handler.quit(); });
+                        std::cout << "ready" << std::endl;
+                        for(size_t i=0;i<1000000;++i)
+                        {
+                            std::string msg = "Hello world:";
+                            msg+=std::to_string(i);
+                            channel.publish("", "hello", msg.c_str());
+                            //std::cout << " [x] Sent " << msg << std::endl;
+                        
+                        }
+                        handler.quit(); 
+                    });
 
     while (true)
         handler.loop();
